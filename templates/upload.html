@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #007bff, #00d4ff);
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #007bff;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        button:hover {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <h1 style="color: white; font-size: 50px;">"EDGE DETECTION AND IMAGE FILTERING"</h1>
+</head>
+<h1 style="color: white; font-size:5em">"EDGE DETECTION AND IMAGE FILTERING"</h1>
+<body>
+    <div class="container">
+        <h1>Upload an Image</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <br>
+            <button type="submit">Upload</button>
+        </form>
+        {% if output_image %}
+        <h2>Processed Image</h2>
+        <img src="{{ output_image }}" alt="Processed Image">
+        {% endif %}
+    </div>
+</body>
+</html>
